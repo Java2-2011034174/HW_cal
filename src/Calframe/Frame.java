@@ -22,13 +22,13 @@ public class Frame extends JFrame implements ActionListener {
 //======= 성민 구현 부분 - GUI
 	
 	
-//=======준보 구현 부분 - 기능
+//=======준모 구현 부분 - 기능
 	private double result = 0;
 	private String operator = "=";
 	private boolean startOfNumber = true;
-	//=======준보 구현 부분 - 기능
+	//=======준모 구현 부분 - 기능
 	
-	//======= 성민 구현 부분 - GUI
+	//======= 성민 구현 부분 - GUI -저번 수업시간 Calframe 응용
 	public Frame() {
 		field = new JTextField(35);
 		panel = new JPanel();
