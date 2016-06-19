@@ -17,6 +17,9 @@ public class Frame extends JFrame   {
 	protected JTextField field;
 	protected JPanel panel;
 	protected String[] labels = {"7","8","9","C","4","5","6","*","1","2","3","-" ,"0","/","+","=" };
+	
+	protected String first = ""; //누적값을 받음
+	
 	public Frame()
 	{
 		setSize(300,200);
