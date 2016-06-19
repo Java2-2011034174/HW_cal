@@ -10,18 +10,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
 public class Frame extends JFrame/* implements ActionListener*/   {
 	
 	protected JButton[] button;
-	protected JTextField NorhtField,CenterField;
+	protected JTextField Field;
 	protected JPanel panel;
 	protected JPanel Textpanel;
 	protected String[] labels = {"7","8","9","C","4","5","6","*","1","2","3","-" ,"0","/","+","=","enter"," "," "," "," " };
 	
-	protected int result = 0;
+	protected double result = 0;
 	protected String operator = "=";
 	protected boolean startOfNumber = true;
-	
+	//======성민 : 기본 GUI	
 	public Frame()
 	{
 		setSize(300,200);
@@ -29,17 +30,14 @@ public class Frame extends JFrame/* implements ActionListener*/   {
 		setTitle("Calculator");
 		//TextBlistener
 		
-		JTextField NorthField = new JTextField(35);
-		NorthField.setText("0");
-		NorthField.setEnabled(false);
-		JTextField CenterField = new JTextField(35);
-		CenterField.setText("0");
-		CenterField.setEnabled(false);
+		JTextField Field = new JTextField(35);
+		Field.setText("0");
+		Field.setEnabled(false);
+	
 	
 		
 		
 		panel = new JPanel();
-		Textpanel = new JPanel();
 		panel.setLayout(new GridLayout(0,4,3,3));
 		button = new JButton[25];
 		
@@ -57,12 +55,9 @@ public class Frame extends JFrame/* implements ActionListener*/   {
 			
 		}
 		
-		Textpanel.setLayout(new BorderLayout());    		// 레이아웃 설정.
-		Textpanel.add(BorderLayout.NORTH,NorthField);   // 패널에 텍스트필드를 두개 붙임.
-		Textpanel.add(BorderLayout.CENTER,CenterField);
-		
-		add(BorderLayout.NORTH,Textpanel); 
-		add(BorderLayout.CENTER,panel);
+				
+		add(Field,BorderLayout.NORTH);   
+		add(panel,BorderLayout.CENTER);
 		
 		
 		
@@ -70,9 +65,27 @@ public class Frame extends JFrame/* implements ActionListener*/   {
 		pack();
 		
 	}
+  //===까지 GUI
+	//======성민 : 더하기 나누기
+	private void calculate(double n)
+	{
+		if(operator.equals("+") )
+			result += n;
+		else if (operator.equals("-"))
+			result -= n;
+		else if (operator.equals("*"))
+			result /= n;
+		else if (operator.equals("*"))
+			result = n;
 	
-
-
+		Field.setText(" " + result);
+	}
+	
+//====까지 사칙연산 구현
+	public static void main(String args[]){
+		
+		Frame s = new Frame();
+	}
 
 	
 }
