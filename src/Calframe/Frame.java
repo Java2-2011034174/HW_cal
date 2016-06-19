@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-//소스만 입력하고 Ctrl+Shift+O를 누른다. 
+
 //======= 성민 구현 부분 - GUI
 public class Frame extends JFrame implements ActionListener {
 
