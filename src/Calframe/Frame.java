@@ -13,10 +13,10 @@ import javax.swing.JTextField;
 
 public class Frame extends JFrame   {
 	
-	private JButton[] button;
-	private JTextField field;
-	private JPanel panel;
-	private String[] labels = {"7","8","9","C","4","5","6","*","1","2","3","-" ,"0","/","+","=" };
+	protected JButton[] button;
+	protected JTextField field;
+	protected JPanel panel;
+	protected String[] labels = {"7","8","9","C","4","5","6","*","1","2","3","-" ,"0","/","+","=" };
 	public Frame()
 	{
 		setSize(300,200);
