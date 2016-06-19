@@ -10,13 +10,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Frame extends JFrame   {
+public class Frame extends JFrame/* implements ActionListener*/   {
 	
 	protected JButton[] button;
 	protected JTextField NorhtField,CenterField;
 	protected JPanel panel;
 	protected JPanel Textpanel;
 	protected String[] labels = {"7","8","9","C","4","5","6","*","1","2","3","-" ,"0","/","+","=","enter"," "," "," "," " };
+	
+	protected int result = 0;
+	protected String operator = "=";
+	protected boolean startOfNumber = true;
+	
 	public Frame()
 	{
 		setSize(300,200);
@@ -45,6 +50,7 @@ public class Frame extends JFrame   {
 			{
 				button[i] = new JButton(labels[i]);
 				panel.add(button[i]);
+				//button[i].addActionListener();
 				i++;
 			}
 			
@@ -65,19 +71,8 @@ public class Frame extends JFrame   {
 		
 	}
 	
-	protected class Buttonlistener implements ActionListener
-	{
-	public void actionPerformed(ActionEvent e)
-	{
-		if(e.getSource() == button)
-		{
-			
-		}
-	}
-	}
-	public static void main(String args[])
-	{
-		Frame s = new Frame();
-	}
+
+
+
 	
 }
